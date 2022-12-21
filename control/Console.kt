@@ -7,7 +7,7 @@ class Console private constructor(){
             var input = readLine()?.toIntOrNull() ?: 0
 
             while (input <= 0 ) {
-                print("Valor inválido, insira novamente: ")
+                print("Invalid value, try again: ")
                 input = readLine()?.toIntOrNull() ?: 0
             }
             return input
@@ -18,7 +18,7 @@ class Console private constructor(){
             var input: String = readLine().toString()
 
             while (input == "") {
-                print("Valor inválido, insira novamente: ")
+                print("Invalid value, try again: ")
                 input = readLine().toString()
             }
             return input.lowercase()

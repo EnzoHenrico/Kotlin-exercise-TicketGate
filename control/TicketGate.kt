@@ -8,29 +8,29 @@ class TicketGate {
     private val guestBusiness: GuestBusiness = GuestBusiness()
 
     init {
-        println("---------- Portaria iniciada! ----------")
+        println("---------- Gates Open! ----------")
         println(this.control())
     }
 
     private fun control(): String {
-        val age = Console.readInt("Qual sua idade? ")
+        val age = Console.readInt("Your age? ")
         val guest = Guest(age)
 
         // Check Age
         if (!guestBusiness.isAgeValid(guest.age)) {
-            return "Negado. Menores de idade não são permitidos"
+            return "Denied. Minors are not allowed"
         }
 
         // Check if ticket type is valid
         guest.ticketType = Console.readString("Qual o tipo do convite? ")
         if (!guestBusiness.isTicketTypeValid(guest.ticketType)) {
-            return "Negado. Tipo de convite inválido"
+            return "Denied. Ticket type invalid"
         }
 
         // Check if ticket code is valid
         guest.ticketCode = Console.readString("Digite o código do convite: ")
         if (!guestBusiness.isGuestValid(guest)) {
-            return "Negado. Código de convite inválido"
+            return "Denied. Ticket code invalid"
         }
 
         return "--------------------\n     Welcome :)\n--------------------"
