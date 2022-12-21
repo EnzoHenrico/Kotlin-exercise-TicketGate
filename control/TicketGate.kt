@@ -22,13 +22,13 @@ class TicketGate {
         }
 
         // Check if ticket type is valid
-        guest.ticketType = Console.readString("Qual o tipo do convite? ")
+        guest.ticketType = Console.readString("Insert invite type: ")
         if (!guestBusiness.isTicketTypeValid(guest.ticketType)) {
             return "Denied. Ticket type invalid"
         }
 
         // Check if ticket code is valid
-        guest.ticketCode = Console.readString("Digite o código do convite: ")
+        guest.ticketCode = Console.readString("Insert invite code: ")
         if (!guestBusiness.isGuestValid(guest)) {
             return "Denied. Ticket code invalid"
         }
